@@ -9,12 +9,14 @@ Introduction
 Presentation
 
 Prerequisites
+
 	- Ensure the .csv files are in the same working directory as the script
 	- Ensure the csv files are properly formatted beforehand
 	- Make sure the file(s) have the proper permissions to be read/ executed
 
 
 Execution:
+
 	- Execute the script: “./script.sh
 	- Input the files which you want to process
 	- Press “Enter” if the necessary number of files has been reached
@@ -34,11 +36,10 @@ Presentation
 
 Sources
 
-
 	https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step
 	https://www.tutorialspoint.com/execute_bash_online.php
 	https://www.shellcheck.net/
 	https://www.linode.com/docs/guides/solving-real-world-problems-with-bash-scripts-a-tutorial/
-https://linuxconfig.org/calculate-column-average-using-bash-shell
+	https://linuxconfig.org/calculate-column-average-using-bash-shell
 
 
