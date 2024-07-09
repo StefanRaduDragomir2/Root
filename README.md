@@ -17,10 +17,6 @@ Presentation
 - Input the files which you want to process
 - Press “Enter” if the necessary number of files has been reached
 - Assuming everything is successful, the script will print onscreen the number 	of outliers found (can be 0), data regarding each outlier and where it was 	found.
-	- Screenshot for reference:
-
-
-
 - The script will output a series of files at the end, a log.txt file containing data and for each processed file, there will be a Filename_outliers.csv file.
 
 Features:
