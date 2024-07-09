@@ -8,14 +8,14 @@ Introduction
 
 Presentation
 
-Prerequisites
+Prerequisites
 
 	- Ensure the .csv files are in the same working directory as the script
 	- Ensure the csv files are properly formatted beforehand
 	- Make sure the file(s) have the proper permissions to be read/ executed
 
 
-Execution:
+Execution:
 
 	- Execute the script: “./script.sh
 	- Input the files which you want to process
@@ -23,7 +23,7 @@ Presentation
 	- Assuming everything is successful, the script will print onscreen the number 	of outliers found (can be 0), data regarding each outlier and where it was 	found.
 	- The script will output a series of files at the end, a log.txt file containing data and for each processed file, there will be a Filename_outliers.csv file.
 
-Features:
+Features:
 
 	- Allow the user to input any number of CSV files
 	- Checks for duplicate files. If a file has already been added to the array, it will 	notify the user. (Help text printed)
