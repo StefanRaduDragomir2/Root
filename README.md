@@ -31,6 +31,8 @@ Presentation
 
 
 Sources
+
+
 https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/calculating-standard-deviation-step-by-step
 https://www.tutorialspoint.com/execute_bash_online.php
 https://www.shellcheck.net/
