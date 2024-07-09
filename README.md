@@ -6,7 +6,6 @@ Introduction
 
 	The code is written in Bash/ Shell and requires user input to run. Its purpose is to determine the Outliers from certain CSV files based on average and standard deviation.
 
-Presentation
 
 Prerequisites
 
