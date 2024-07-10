@@ -40,5 +40,6 @@ Sources
 	https://www.shellcheck.net/
 	https://www.linode.com/docs/guides/solving-real-world-problems-with-bash-scripts-a-tutorial/
 	https://linuxconfig.org/calculate-column-average-using-bash-shell
+ 	https://www.websentra.com/bash-cheat-sheet/
 
 
