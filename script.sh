@@ -113,21 +113,18 @@ Processing $file
 
 # Goes through all stock prices and checks for outliers based on the top/ bot thresholds. If outliers are detected
 # , then it logs the info and appends them in their respective files. Begins counting the number of outliers
-    for value in "${prices[@]}"; do
-        deviation=$(awk -v value="$value" -v average="$average" 'BEGIN {print value - average}')
-        abs_deviation=$(awk -v deviation="$deviation" 'BEGIN {if (deviation < 0) {print -deviation} else {print deviation}}')
-        percent_deviation=$(awk -v abs_deviation="$abs_deviation" -v average="$average" 'BEGIN {print (abs_deviation / average) * 100}')
-        if (( $(awk -v value="$value" -v top_threshold="$top_threshold" -v bottom_threshold="$bottom_threshold" 'BEGIN {print (value > top_threshold || value < bottom_threshold)}') )); then
-            echo_log "Outlier found: Value=$value, Deviation=$deviation, % Deviation=$percent_deviation"
-            for i in "${!prices[@]}"; do
-                if [[ "${prices[$i]}" == "$value" ]]; then
-                    outlier_lines+="${stock_ids[$i]},${timestamps[$i]},${prices[$i]},$average,$deviation,$percent_deviation\n"
-                    echo "${stock_ids[$i]},${timestamps[$i]},${prices[$i]},$average,$deviation,$percent_deviation" >> "$csv_file"
-                    ((outlier_count++))
-                fi
-            done
-        fi
-    done
+for i in "${!prices[@]}"; do
+    value="${prices[$i]}"
+    deviation=$(awk -v value="$value" -v average="$average" 'BEGIN {print value - average}')
+    abs_deviation=$(awk -v deviation="$deviation" 'BEGIN {if (deviation < 0) {print -deviation} else {print deviation}}')
+    percent_deviation=$(awk -v abs_deviation="$abs_deviation" -v average="$average" 'BEGIN {print (abs_deviation / average) * 100}')
+    if (( $(awk -v value="$value" -v top_threshold="$top_threshold" -v bottom_threshold="$bottom_threshold" 'BEGIN {print (value > top_threshold || value < bottom_threshold)}') )); then
+        echo_log "Outlier found: Value=$value, Deviation=$deviation, % Deviation=$percent_deviation"
+        outlier_lines+="${stock_ids[$i]},${timestamps[$i]},${prices[$i]},$average,$deviation,$percent_deviation\n"
+        echo "${stock_ids[$i]},${timestamps[$i]},${prices[$i]},$average,$deviation,$percent_deviation" >> "$csv_file"
+        ((outlier_count++))
+    fi
+done
 
 
 # If 0 outliers counted above, logs below message, else it will log in the log.txt
