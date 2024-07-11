@@ -93,7 +93,7 @@ Processing $file
     echo_log "Average: $average"
     echo_log "Standard Deviation: $stddev"
 
-# Get the outlier definition -> average + 2 * stddev + average for top threshold OR 2 * stddev - average for bottom one
+# Get the outlier definition -> average + 2 * stddev for top threshold OR 2 * stddev - average for bottom one
     threshold=$(awk -v stddev="$stddev" 'BEGIN {print 2 * stddev}')
     top_threshold=$(awk -v average="$average" -v threshold="$threshold" 'BEGIN {print average + threshold}')
     bottom_threshold=$(awk -v average="$average" -v threshold="$threshold" 'BEGIN {print average - threshold}')
